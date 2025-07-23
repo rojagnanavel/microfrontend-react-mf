@@ -26,11 +26,9 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "remote_app",
       filename: "remoteEntry.js",
-      remotes:{
-        host_app: "host_app@http://localhost:3000/remoteEntry.js",
-      },
       exposes: {
         "./RemoteButton": "./src/RemoteButton",
+        "./UserContext": "./src/context/UserContext"
       },
       shared: {
         react: {

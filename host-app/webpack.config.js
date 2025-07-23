@@ -25,11 +25,9 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       name: "host_app",
+      filename: "remoteEntry.js",
       remotes: {
         remote_app: "remote_app@http://localhost:3001/remoteEntry.js",
-      },
-      exposes:{
-        "./UserContext": "./src/context/UserContext"
       },
       shared: {
         react: {
